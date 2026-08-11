@@ -88,3 +88,83 @@
 
 28. Last Deleted File Access Time
     File Views → Deleted Files → File System
+
+1. Start time
+   frame.number == 1
+
+2. Infected IP
+   ip.addr == 192.168.1.64
+
+3. MAC address
+   arp.src.proto_ipv4 == 192.168.1.64
+
+4. Hostname
+   dhcp.option.hostname
+   nbns
+   llmnr
+
+5. Username
+   ntlmssp
+
+6. Operating system
+   ntlmssp
+   http.user_agent
+
+7. How it became infected
+   ip.addr == 192.168.1.64 && dns
+   ip.addr == 192.168.1.64 && http
+
+8. Public/external IP
+   ip.addr == 192.168.1.64
+   Statistics -> Conversations -> IPv4
+
+9. Country/location
+   Identify the relevant public IP, then geolocate it.
+
+10. Domain
+    dns.qry.name
+
+11. Domain country
+    dns.qry.name
+
+
+FILTER ACCORDING TO PROTOCOL
+
+DNS
+   dns
+
+HTTP
+   http
+
+TCP
+   tcp
+
+UDP
+   udp
+
+ARP
+   arp
+
+
+FILTER ACCORDING TO IP ADDRESS
+
+Address
+   ip.addr == 192.168.1.64
+
+Source
+   ip.src == 192.168.1.64
+
+Destination
+   ip.dst == 192.168.1.64
+
+
+FILTER IP ADDRESS + PROTOCOL
+
+DNS
+   ip.addr == 192.168.1.64 && dns
+
+HTTP
+   ip.addr == 192.168.1.64 && http
+
+TCP
+   ip.addr == 192.168.1.64 && tcp
